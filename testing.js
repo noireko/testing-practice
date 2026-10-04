@@ -6,7 +6,6 @@ function reverseString(word) {
     return word.split("").reverse().join("");
 }
 
-
 const calculator = {
     add: function suma(a, b) {
         return a + b;
@@ -22,4 +21,19 @@ const calculator = {
     }
 }
 
-export { capitalize, reverseString, calculator }
+function cesar(texto, clave) {
+    const abecedario = "abcdefghijklmnñopqrstuvwxyz".split("");
+    const n = abecedario.length; // 27
+
+    return texto
+        .toLowerCase()
+        .split("")
+        .map((letra) => {
+            const i = abecedario.indexOf(letra);
+            if (i === -1) return letra; // espacios, números, signos: se dejan igual
+            return abecedario[(((i + clave) % n) + n) % n];
+        })
+        .join("");
+}
+
+export { capitalize, reverseString, calculator, caesarCipher }
