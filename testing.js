@@ -23,7 +23,7 @@ const calculator = {
 
 function caesarCipher(texto, clave) {
     const abecedario = "abcdefghijklmnñopqrstuvwxyz".split("");
-    const n = abecedario.length; // 27
+    const n = abecedario.length;
 
     return texto
         .toLowerCase()
@@ -36,4 +36,14 @@ function caesarCipher(texto, clave) {
         .join("");
 }
 
-export { capitalize, reverseString, calculator, caesarCipher }
+function analyzeArray(array) {
+    const sumaArray = array.reduce((total, num) => total + num, 0);
+    return {
+        average: sumaArray / array.length,
+        min: Math.min(...array),
+        max: Math.max(...array),
+        length: array.length
+    }
+}
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray }
