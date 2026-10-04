@@ -29,7 +29,7 @@ reverseString("Hola");            // "aloH"
 calculator.add(1, 3);             // 4
 calculator.divide(6, 3);          // 2
 
-caesarCipher("Hola", 3);          // "krñd"
+caesarCipher("Hola", 3);          // "Krñd"
 caesarCipher("krñd", -3);         // "hola"  (negative keys decrypt)
 
 analyzeArray([1, 8, 3, 4, 2, 6]);
@@ -39,7 +39,7 @@ analyzeArray([1, 8, 3, 4, 2, 6]);
 ### Notes on `caesarCipher`
 
 - Uses the Spanish alphabet (`abcdefghijklmnñopqrstuvwxyz`), so shifts wrap around after `z`.
-- The output is always **lowercase**.
+- Uppercase and lowercase letters are preserved.
 - Characters outside the alphabet (spaces, numbers, punctuation) are left unchanged.
 - Negative keys shift backwards, which allows decryption.
 
