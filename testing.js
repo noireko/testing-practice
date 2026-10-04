@@ -21,7 +21,7 @@ const calculator = {
     }
 }
 
-function cesar(texto, clave) {
+function caesarCipher(texto, clave) {
     const abecedario = "abcdefghijklmnñopqrstuvwxyz".split("");
     const n = abecedario.length; // 27
 
@@ -30,7 +30,7 @@ function cesar(texto, clave) {
         .split("")
         .map((letra) => {
             const i = abecedario.indexOf(letra);
-            if (i === -1) return letra; // espacios, números, signos: se dejan igual
+            if (i === -1) return letra;
             return abecedario[(((i + clave) % n) + n) % n];
         })
         .join("");
