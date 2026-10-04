@@ -1,5 +1,5 @@
-const capitalize = require("./testing.js");
-const reverseString = require("./testing.js");
+
+import { capitalize, reverseString, calculator } from "./testing.js"
 
 test("si se capitaliza la primer letra en la palabra", () => {
     expect(capitalize("hola")).toBe("Hola");
