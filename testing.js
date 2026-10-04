@@ -1,4 +1,5 @@
 module.exports = capitalize;
+module.exports = reverseString;
 
 function capitalize(word) {
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
@@ -7,6 +8,7 @@ function capitalize(word) {
 function reverseString(word) {
     return word.split("").reverse().join("");
 }
+
 
 const calculator = {
     add: function suma(a, b) {
