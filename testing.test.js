@@ -1,5 +1,5 @@
 
-import { capitalize, reverseString, calculator } from "./testing.js"
+import { capitalize, reverseString, calculator, caesarCipher } from "./testing.js"
 
 test("si se capitaliza la primer letra en la palabra", () => {
     expect(capitalize("hola")).toBe("Hola");
@@ -7,4 +7,15 @@ test("si se capitaliza la primer letra en la palabra", () => {
 
 test("verificar si se da vuelta la palabra", () => {
     expect(reverseString("Hola")).toBe("aloH");
+});
+
+test("decodificar mensaje caesar", () => {
+    expect(caesarCipher("Hola", 3)).toBe("krñd")
+});
+
+test("calcular numeros", () => {
+    expect(calculator.add(1, 3)).toBe(4);
+    expect(calculator.subtract(3, 1)).toBe(2);
+    expect(calculator.divide(3, 1)).toBe(3);
+    expect(calculator.multiply(1, 3)).toBe(3);
 });
