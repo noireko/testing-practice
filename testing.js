@@ -26,12 +26,14 @@ function caesarCipher(texto, clave) {
     const n = abecedario.length;
 
     return texto
-        .toLowerCase()
         .split("")
         .map((letra) => {
-            const i = abecedario.indexOf(letra);
+            const i = abecedario.indexOf(letra.toLowerCase());
             if (i === -1) return letra;
-            return abecedario[(((i + clave) % n) + n) % n];
+
+            const nueva = abecedario[(((i + clave) % n) + n) % n];
+            const eraMayuscula = letra !== letra.toLowerCase();
+            return eraMayuscula ? nueva.toUpperCase() : nueva;
         })
         .join("");
 }
